@@ -112,9 +112,9 @@ critic1.reviews.push(review);
 //     console.log(book)
 //   })
 
-// Critic.findOne({name:"critic1"}).populate('reviews').exec(function(err, critic){
-//     console.log(critic);
-// })
+Critic.findOne({name:"critic1"}).populate('reviews').exec(function(err, critic){
+    console.log(critic);
+})
 
 // Book.findOne({title:'book1'}).populate({
 //     path: 'reviews',
@@ -129,19 +129,19 @@ critic1.reviews.push(review);
 //     }
 // })
 
-Critic.findOne({name: 'critic1'}).populate ({
-    path: 'reviews',
-    populate: {
-        path: 'book'
-        }
-    }).exec(function(err, critic) {
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(critic.reviews[0].book);
-        }
-    });
+// Critic.findOne({name: 'critic1'}).populate ({
+//     path: 'reviews',
+//     populate: {
+//         path: 'book'
+//         }
+//     }).exec(function(err, critic) {
+//         if (err) {
+//             console.error(err);
+//         } else {
+//             console.log(critic.reviews[0].book);
+//         }
+//     });
 
-    Critic.findOne({ name: "critic1" }).populate('reviews', 'text-_id').exec(function(err, critic) {
-        console.log(critic.reviews);
-      });
+//     Critic.findOne({ name: "critic1" }).populate('reviews', 'text-_id').exec(function(err, critic) {
+//         console.log(critic.reviews);
+//       });
